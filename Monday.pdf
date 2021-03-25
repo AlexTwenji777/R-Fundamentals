@@ -1,0 +1,29 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+```{r}
+mymat <- matrix(1:12,4,3)
+
+mymat <- matrix(1:12,ncol=3,byrow=TRUE)
+
+kenya <- c(460.998, 314.4) 
+ethiopia <- c(290.475, 247.900) 
+chad <- c(309.306, 165.8)
+geography_matrix <- matrix(c(kenya, ethiopia, chad), nrow = 3, byrow = TRUE)
+location <- c("Lat", "Long")
+countries <- c("Kenya", "Ethiopia", "Chad")
+colnames(geography_matrix) <- location
+rownames(geography_matrix) <- countries
+geography_matrix
+```
+```{r}
+x <- matrix(c(3, 9, -1, 4, 2, 6), nrow = 2)
+y <- matrix(c(5, 2, 0, 9, 3, 4), nrow = 2)
+x+y
+x-y
+x*y
+x / y
+```
+
