@@ -1,0 +1,180 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+```{r}
+# Bivariate and Multivariate Graphical Data Analysis
+
+## 1. Bivariate analysis
+
+#### Covariance Code Example 1.1
+
+## Example
+# ---
+# Question: Find the covariance of eruption duration and waiting time in the data set faithful 
+# ---
+# OUR CODE GOES BELOW
+# 
+
+# Printing out the the first 6 rows of the dataset
+# ---
+# 
+head(faithful)
+```
+```{r}
+# Assigning the eruptions column to the variable eruptions
+# ---
+# 
+eruptions <- faithful$eruptions
+
+# Assigning the waiting column to the variable waiting
+# ---
+# 
+waiting<- faithful$waiting
+
+# Using the cov() function to determine the covariance
+# ---
+#
+cov(eruptions, waiting)
+
+# The covariance of eruption duration and waiting time is about 13.98. It indicates a positive linear relationship between the two variables.
+```
+```{r}
+## Challenge
+# ---
+# Question: Find out the covariance of Bwt and Hwt in the cats dataset
+# ---
+# OUR CODE GOES BELOW
+# 
+
+# Previewing the cats dataset
+# ---
+# 
+head(cats)
+```
+```{r}
+Bwt = cats$Bwt
+Hwt = cats$Hwt
+
+cov(Bwt,Hwt)
+```
+```{r}
+#### Correlation Coefficient Code Example 1.2
+
+## Example 
+# ---
+# Question: Find the correlation coefficient of eruption duration and waiting time in the faithful dataset
+# ---
+# OUR CODE GOES BELOW
+# 
+
+# Assigning the eruptions column to the variable eruptions
+# ---
+# 
+eruptions <- faithful$eruptions
+
+# Assigning the waiting column to the variable waiting
+# ---
+#
+waiting<- faithful$waiting
+
+# Using the cor() function to determine the covariance
+# ---
+#
+cor(eruptions, waiting)
+```
+```{r}
+## Challenge 
+# ---
+# Question: Find out the covariance of Bwt and Hwt in the cats data set below:
+# ---
+# OUR CODE GOES BELOW 
+# 
+
+# Previewing the cats dataset by first importing the Mass library 
+# then displaying the first 6 records of this database
+library(MASS)
+head(cats)
+```
+```{r}
+cor(Bwt,Hwt)
+```
+```{r}
+## Challenge
+# ---
+# Question: Create a correlation matrix in R using the corr() function
+# ---
+# Hint: http://bit.ly/RDocumentationCorrMatrix
+# ---
+# Dataset url = http://bit.ly/HousingDatainR
+# ---
+# OUR CODE GOES BELOW
+
+
+
+# !!!! dataset not found!!! Error 404 
+
+```
+
+```{r}
+## 2. Graphical Techniques
+
+#### Scatterplot Code Example 2.1
+
+## Example 
+# ---
+# Question: Create a scatter plot of the eruption durations and waiting intervals from the faithful dataset
+# ---
+# OUR CODE GOES BELOW 
+# 
+
+# Assigning the eruptions column to the variable eruptions
+# ---
+# 
+eruptions <- faithful$eruptions
+
+# Assigning the waiting column to the variable waiting
+# ---
+#
+waiting <- faithful$waiting
+
+# Creating the scatter plot using eruptions and waiting
+# ---
+# 
+plot(eruptions, waiting, xlab="Eruption duration", ylab="Time waited")
+```
+```{r}
+# Challenge 
+# ---
+# Question: Using the cats dataset, create a scatter plot of the Bwt and Hwt variables. 
+# Does it reveal any relationship between these variables?
+# ---
+# OUR CODE GOES BELOW
+# 
+
+# Previewing the cats dataset
+# ---
+# 
+head(cats)
+```
+```{r}
+plot(Bwt, Hwt, xlab="Bwt", ylab="Hwt")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

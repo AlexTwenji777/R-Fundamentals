@@ -1,0 +1,344 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+```{r}
+# Univariate Graphical Exploratory Data Analysis
+
+## 1. Measures of Central Tendency
+
+## Example 
+# ---
+# We will be using the hills dataset in this section, 
+# this dataset contains information on hill climbs made by various athletes
+# ---
+# OUR CODE GOES BELOW
+# 
+
+# Printing the first six rows of the dataset 
+# ---
+# 
+library(MASS)
+head(hills)
+```
+```{r}
+## Example  
+# ---
+# Question: Find the mean of the distance covered by the athletes 
+# and assigning the mean to the variable athletes.dist.mean
+# ---
+# OUR CODE GOES BELOW
+# 
+
+athletes.dist.mean <- mean(hills$dist)
+
+# Printing out
+# ---
+#
+athletes.dist.mean
+```
+```{r}
+#### Median Code Example 1.2
+
+## Example 
+# ---
+# Question: Find the median which is the middle most value of the distance covered dist
+# ---
+# OUR CODE GOES BELOW
+# 
+athletes.dist.median <- median(hills$dist)
+
+# Printing out athletes.dist.median
+# ---
+# 
+athletes.dist.median
+```
+```{r}
+## Example 
+# ---
+# Question: Find the mode which is the value that has highest number of occurrences in a set of data. 
+# ---
+# OUR CODE GOES BELOW
+# 
+
+# Unfotunately, R does not have a standard in-built function to calculate mode so we have to build one
+# We create the mode function that will perform our mode operation for us
+# ---
+# 
+getmode <- function(v) {
+   uniqv <- unique(v)
+   uniqv[which.max(tabulate(match(v, uniqv)))]
+}
+
+# Calculating the mode using out getmode() function
+# ---
+#
+athletes.dist.mode <- getmode(hills$dist)
+
+# Then printing out athletes.dist.mode 
+# ---
+# OUR CODE GOES BELOW
+# 
+athletes.dist.mode
+```
+```{r}
+## Challenge 
+# ---
+# Question: Find the mean, median, mode of the total evening calls given the following dataset 
+# ---
+url_1 <- 'http://bit.ly/CustomerSignatureforChurnAnalysis'
+# ---
+# OUR CODE GOES BELOW 
+
+# Previewing the first 6 rows of this dataset
+# ---
+#
+
+churn = fread(url_1)
+head(churn)
+```
+```{r}
+eve.calls.mean <- mean(churn$total_eve_calls)
+eve.calls.median <- median(churn$total_eve_calls)
+eve.calls.mode <- getmode(churn$total_eve_calls)
+
+eve.calls.mean
+eve.calls.median
+eve.calls.mode
+
+```
+```{r}
+## 2. Measures of Dispersion
+
+#### Mininum Code Example 1.4
+
+## Example 
+# ---
+# Question: Find the minimum element of the distance using the min() function
+# ---
+# OUR CODE GOES BELOW
+# 
+athletes.dist.min <- min(hills$dist)
+
+# And then printing athletes.dist.min to show the minimum element
+# 
+athletes.dist.min
+```
+```{r}
+## Example
+# ---
+# Question: Find the maximum element of the distance using the function max() 
+# ---
+# OUR CODE GOES BELOW 
+# 
+athletes.dist.max <- max(hills$dist)
+
+# Then printing out the variable athletes.dist.max to show that maximum element
+# ---
+# OUR CODE GOES BELOW
+#
+
+athletes.dist.max
+```
+```{r}
+#### Range Code Example 1.6
+
+## Example 
+# ---
+# Find the maximum element of the distance using the function range() as shown below
+# ---
+# 
+athletes.dist.range <- range(hills$dist)
+
+# Printing out the variable athletes.dist.range to show the range 
+# ---
+#
+athletes.dist.range
+```
+```{r}
+#### Quantile Code Example 1.7
+
+## Example 
+# ---
+# Question: Get the first and the third quartile together with the range 
+# and the median using the quantile() function
+# ---
+# OUR CODE GOES BELOW
+# 
+athletes.dist.quantile <- quantile(hills$dist)
+
+# Printing out the variable athletes.dist.quantile to show the range  
+# ---
+# OUR CODE GOES BELOW
+# 
+
+athletes.dist.quantile
+```
+```{r}
+#### Variance Code Example 1.8
+
+## Example 
+# ---
+# Question: Find the variance of the distance using the var() function as shown below
+# ---
+# OUR CODE GOES BELOW 
+# 
+
+athletes.dist.variance <- var(hills$dist)
+
+# Printing out the the variable athletes.dist.variance to show the variance 
+# 
+athletes.dist.variance
+```
+```{r}
+#### Standard Deviation Code Example 1.9
+
+## Example 
+# ---
+# Question: Find the standard deviation of vector t using the sd() function 
+# ---
+# OUR CODE GOES BELOW 
+# 
+athletes.dist.sd <- sd(hills$dist)
+
+# Printing out the variable athletes.dist.sd to show the variance 
+# ---
+#
+athletes.dist.sd
+```
+```{r}
+# Challenge 
+# ---
+# Question: Find the minimum, maximum, range, quantile, variance 
+# and standard deviation for total day calls using the given dataset
+# ---
+# Dataset url = http://bit.ly/CustomerSignatureforChurnAnalysis
+# ---
+# OUR CODE GOES BELOW
+# 
+
+
+# Find the minimum of total day calls
+# ---
+# OUR CODE GOES BELOW
+# 
+day.calls.min <- min(churn$total_day_calls)
+day.calls.max <- max(churn$total_day_calls)
+day.calls.range <- range(churn$total_day_calls)
+day.calls.quantile <- quantile(churn$total_day_calls)
+day.calls.variance <- var(churn$total_day_calls)
+day.calls.std <- sd(churn$total_day_calls)
+
+day.calls.min
+day.calls.max
+day.calls.range
+day.calls.quantile
+day.calls.variance
+day.calls.std
+```
+```{r}
+## 3. Univariate Graphical
+
+#### Box Plots Code Example 3.1
+
+## Example 
+# ---
+# Question: Lets create a boxplot graph for the distance using the boxplot() function
+# ---
+# OUR CODE GOES BELOW
+# 
+
+boxplot(hills$dist)
+```
+```{r}
+#### Bar Graph Code Example 3.2
+## Example 
+# ---
+# Create a frequency distribution of the School variable
+# ---
+# Dataset Info: For this example, we will use an R built-in database named painters. 
+# ---
+# OUR CODE GOES BELOW
+# 
+
+# Previewing the first six rows of the painters dataset
+# ---
+# OUR CODE GOES BELOW
+#   
+head(painters)
+```
+```{r}
+# Fetching the school column
+# ---
+# 
+school <- painters$School
+
+# Applying the table() function will compute the frequency distribution of the School variable
+# ---
+# 
+school_frequency <- table(school)
+
+# Printing school_frequency below
+# ---
+#
+school_frequency
+```
+```{r}
+# Then applying the barplot function to produce its bar graph
+# ---
+# 
+barplot(school_frequency)
+```
+```{r}
+## Challenge
+# ---
+# Question: Create a bar graph of the total day calls in the customer signature dataset
+# ---
+# Dataset url = http://bit.ly/CustomerSignatureforChurnAnalysis
+# ---
+# OUR CODE GOES BELOW
+#
+day_calls <- churn$total_day_calls
+day.calls_frequency <- table(day_calls)
+barplot(day.calls_frequency)
+```
+```{r}
+#### Histogram Code Example 3.3
+
+## Example
+# ---
+# Create a histogram using the faithful dataset 
+# --- 
+# Hint: we will use an R built-in data frame called faithful 
+# ---
+# OUR CODE GOES BELOW
+# 
+
+# Preview the first six rows of the faithful dataset
+# ---
+# OUR CODE GOES BELOW
+# 
+head(faithful)
+```
+```{r}
+# Then applying the hist() function to produce the histogram of the eruptions variable 
+# ---
+# 
+hist(faithful$eruptions)
+```
+```{r}
+## Challenge 
+# ---
+# Question: Create a histogram of the total day minutes in the customer signature dataset 
+# ---
+# Dataset url = http://bit.ly/CustomerSignatureforChurnAnalysis
+# ---
+# OUR CODE GOES BELOW
+
+hist(churn$total_day_minutes)
+```
+
+
+
+

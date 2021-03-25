@@ -1,0 +1,101 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+```{r}
+# Outliers
+
+## 1. Screening for Outliers
+
+## Example 
+# ---
+# Let's create the vector A
+# ---
+# 
+
+A <- c(3, 2, 5, 6, 4, 8, 1, 2, 30, 2, 4)
+
+# then print it out 
+A
+```
+```{r}
+# We then plot a boxplot to help us visualise any existing outliers 
+# ---
+#  
+boxplot(A)
+```
+```{r}
+# Then use the function boxplot.stats which lists the outliers in the vectors
+# ---
+# 
+boxplot.stats(A)$out
+```
+```{r}
+## 2. Obvious Inconsistencies
+
+## Example 
+# ---
+# Say from our vector x above, values above 20 are obvious inconsistencies 
+# then we using logical indices to check for 
+# ---
+#
+non_greater_than_20 <- A > 20
+
+# printing out non_greater_than_20
+non_greater_than_20
+```
+```{r}
+# Challenge 
+# ---
+# Question: Use the given bus dataset below, determine whether there are any obvious inconsistencies 
+# ---
+# Dataset url = http://bit.ly/BusNairobiWesternTransport
+# ---
+# OUR CODE GOES BELOW
+# 
+
+# Importing our database
+# ---
+# 
+# install.package("data.table") # install package data.table to work with data tables
+library(data.table) # load package
+#install.package("tidyverse") # install packages to work with data frame - extends into visualization
+library(tidyverse) 
+
+bus_dataset <- fread('https://raw.githubusercontent.com/cimplival/datasets/master/buses-western-Nairobi%20-%20buses-western-Nairobi.csv')
+
+
+# Previewing the dataset
+# ---
+# 
+View(bus_dataset)
+str(bus_dataset)
+dim(bus_dataset)
+class(bus_dataset)
+
+# Identifying the numeric class in the data and evaluating if there are any outliers
+# ---
+# OUR CODE GOES BELOW
+# 
+```
+```{r}
+boxplot(bus_dataset$max_capacity)
+```
+```{r}
+boxplot.stats(bus_dataset$max_capacity)$out
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,146 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+x <- 5 
+y <- 16 
+x + y
+
+y - x
+
+x * y
+
+x / y
+
+y %% x
+
+a <- 10
+b <- 4
+
+a + b
+a - b
+a*b
+a / b
+a %% b
+
+c <- 9
+d <- 2
+c %% d
+
+a <- 5
+b <- 4
+b - a + 10 / 2 * a * 3 + 10 - 59
+
+x
+y
+x < y
+
+x > y
+
+x <= y
+
+x >= y
+
+y == y
+
+x != y
+
+v <- c(3,1,TRUE,2+3i) 
+t <- c(4,1,FALSE,2+3i)
+
+v & t
+
+v <- c(0,0,TRUE,2+2i) 
+t <- c(0,3,TRUE,2+3i)
+v|t
+
+v <- c(3,1,TRUE,2+3i) 
+t <- c(4,1,FALSE,2+3i)
+v||t
+
+v <- c(3,1,TRUE,2+3i) 
+t <- c(4,1,FALSE,2+3i)
+v & t
+
+v1 <- c(3,1,TRUE,2+3i) 
+v2 <<- c(3,1,TRUE,2+3i) 
+v3 = c(3,1,TRUE,2+3i)
+v1
+
+v2
+
+v3
+
+c(3,1,TRUE,2+3i) -> v1 
+c(3,1,TRUE,2+3i) ->> v2 
+v1
+
+v2
+
+variable.1 = c(3,4,5,6)  
+variable.2 <- c("Hello"," there")  
+c(TRUE,2) -> variable.3
+
+m = 62.4
+m
+
+n = as.integer(3)
+n
+
+p = as.integer(3.14)
+p
+
+k = 1 + 2i
+k
+
+x = 4;  y = 6
+z = x > y
+z
+
+g = toString(62.48)
+g
+
+alist <- list ("Red", "Blue", c(42,36,01), FALSE, 73.91, 128.6)
+alist
+
+a <- c(1,2,5.3,6,-2,4)                   # numeric vector 
+b <- c("one","two","three")              # character vector 
+c <- c(TRUE,TRUE,TRUE,FALSE,TRUE,FALSE)  # logical vector
+
+a
+b
+c
+
+list_data <- list(c("Jan","Feb","Mar"), matrix(c(3,9,5,1,-2,8), nrow = 2), list("green",12.3))
+names(list_data) <- c("1st Quarter", "A_Matrix", "A Inner list") 
+list_data
+
+a <- c("Serena Williams", "Tennis Player") 
+names(a) <- c("Name", "Profession")
+a
+
+ls <- list( first = 2, second = 4, third = list( fourth = 3.2, fifth = 6.4 ) )
+ls [1:2]
+ls[-3]
+ls [c ("first", "second")]
+
+a <- c(1,2,5.3,6,-2,4)
+a[c(2,3)]
+
+list_data <- list(c("Jan","Feb","Mar"), matrix(c(3,9,5,1,-2,8), nrow = 2))
+list_data[4] <- "New element" 
+list_data[4]
+
+month <- list()
+month[1] <- "Jan"
+month[2] <- "Feb"
+month[3] <- "Mar"
+month
+
+p = c(1, 2, 3)
+q = c("aa", "bb", "cc")
+c(p, q)
+
+a <- c("Serena Williams", "Tennis Player") 
+names(a) <- c("Name", "Profession")
